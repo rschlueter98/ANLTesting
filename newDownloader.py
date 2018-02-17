@@ -18,10 +18,19 @@ import cv2
 
 
 if __name__ == '__main__':
+  downloadCounter=0
+
   url="http://video3.earthcam.com/fecnetwork/10347.flv/playlist.m3u8"
   cap = cv2.VideoCapture(url)
   print("Stream opened")
-  time.sleep(1)
+  time.sleep(0.5)
+  for x in range (0,10):
+    frame = stream.read()[1]
+    filename = ("z_" + str(downloadCounter) + ".jpg")
+    fullpath = ("home/rschluet/imageDownloads/" + filename)
+    cv2.imwrite(str(fullpath), frame)
+
+
   cap.release()
   print("Stream closed")
 
