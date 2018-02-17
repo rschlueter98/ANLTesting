@@ -29,9 +29,11 @@ if __name__ == '__main__':
     filename = ("z_" + str(downloadCounter) + ".jpg")
     fullpath = ("home/rschluet/imageDownloads/" + filename)
     cv2.imwrite(str(fullpath), frame)
+    print(str(downloadCounter + " downloaded")
 
 
-  cap.release()
+
+  stream.release()
   print("Stream closed")
 
 
