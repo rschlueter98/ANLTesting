@@ -18,7 +18,7 @@ import cv2
 
 
 if __name__ == '__main__':
-  loadStream("http://video3.earthcam.com/fecnetwork/10347.flv/playlist.m3u8")
+  url="http://video3.earthcam.com/fecnetwork/10347.flv/playlist.m3u8"
   cap = cv2.VideoCapture(url)
   time.sleep(500)
   cap.release()
