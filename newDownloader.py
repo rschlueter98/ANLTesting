@@ -21,7 +21,7 @@ if __name__ == '__main__':
   downloadCounter=0
 
   url="http://video3.earthcam.com/fecnetwork/10347.flv/playlist.m3u8"
-  cap = cv2.VideoCapture(url)
+  stream = cv2.VideoCapture(url)
   print("Stream opened")
   time.sleep(0.5)
   for x in range (0,10):
