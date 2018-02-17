@@ -15,7 +15,7 @@ if __name__ == '__main__':
   cap = cv2.VideoCapture(url)
 
   ret, frame = cap.read()
-  print(frame)
+  # print(frame)
   path = "/home/rschluet/imageDownloads"
   filename = ("z_" + "1" + ".jpg")
   fullpath = (str(path) + "/" + filename)
