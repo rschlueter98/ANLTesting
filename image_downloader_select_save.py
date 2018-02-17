@@ -16,13 +16,7 @@
 import threading
 import time
 import cv2
-import numpy as np
-import caffe
 import sys
-GPU_ID = 0  # Switch between 0 and 1 depending on the GPU you want to use.
-# caffe.set_mode_gpu()
-# caffe.set_device(GPU_ID)
-caffe.set_mode_cpu()
 
 #Change these number of cores based of whatever system you are running it on
 #I normally used 5*<however_many_threads_your_cpu_has> for loading cores. This is entirely network bound
