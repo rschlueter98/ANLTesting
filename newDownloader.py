@@ -26,10 +26,10 @@ if __name__ == '__main__':
   time.sleep(0.5)
   for x in range (0,10):
     frame = stream.read()[1]
-    filename = ("z_" + str(downloadCounter) + ".jpg")
+    filename = ("z_" + str(x) + ".jpg")
     fullpath = ("home/rschluet/imageDownloads/" + filename)
     cv2.imwrite(str(fullpath), frame)
-    print(str(downloadCounter) + " downloaded")
+    print(str(x) + " downloaded")
 
 
 
