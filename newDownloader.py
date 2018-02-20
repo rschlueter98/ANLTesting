@@ -128,7 +128,7 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
 # Downloads a set number of images
 def numDownloadImage(stream, streamName, numToDownload, saveImage):
   global downloadCounter
-  path = "/homes/rschluet/batchDownloadForYolo"
+  path = "home/rschluet/imageDownloads"
   breaker = False
   for x in range(numToDownload):
     if(breaker):
