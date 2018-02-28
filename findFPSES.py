@@ -42,7 +42,7 @@ def downloadImages(inputFile, outputFile):
 
 
 if __name__ == '__main__':
-    inputFile = open("m3u8sDownloadingAll.txt", 'r')
+    inputFile = open("m3u8s_updated.txt", 'r')
     outputFile = open("wholeSetFPSES.txt", 'w')
     downloadImages(inputFile, outputFile)
 
