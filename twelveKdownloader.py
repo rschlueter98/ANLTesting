@@ -88,8 +88,8 @@ def downloadImages(input, saveImage):
 # Downloads images for a set time
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
-  path = "/home/ryan/Research/imageDownloadTesting"  #loacl
-  # path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
+  # path = "/home/ryan/Research/imageDownloadTesting"                  #loacl
+  path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
   path=path+"/"+str(now.strftime("%Y-%m-%d-%H-%M"))
   path=path+"/"+streamName
   os.makedirs(path)
