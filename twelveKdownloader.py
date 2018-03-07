@@ -15,6 +15,10 @@ import time
 import sys
 import cv2
 import psutil
+import datetime
+import os
+
+now=datetime.datetime.now()
 
 
 systemCores=0
@@ -84,8 +88,12 @@ def downloadImages(input, saveImage):
 # Downloads images for a set time
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
-  # path = "/home/ryan/Research/imageDownloadTesting"  #loacl
-  path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
+  path = "/home/ryan/Research/imageDownloadTesting"  #loacl
+  # path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
+  path=path+"/"+str(now.strftime("%Y-%m-%d-%H-%M"))
+  path=path+"/"+streamName
+  os.makedirs(path)
+  print(path)
   timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
@@ -95,7 +103,7 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
     try:
       frame = stream.read()[1]
       if (saveImage):
-        filename = ("z_" + str(streamName) + str(downloadCounter) + ".jpg")
+        filename = ("z_" + str(downloadCounter) + ".jpg")
         fullpath = (str(path) + "/" + filename)
         cv2.imwrite(str(fullpath), frame)
       else:
@@ -147,7 +155,7 @@ if __name__ == '__main__':
 
 
   # time to download (minutes), save or not
-  downloadImages(5, 1)
+  downloadImages(0.5, 1)
 
   # Wait while not done downloading yet
   while (len(cores_download_current) > 0):
