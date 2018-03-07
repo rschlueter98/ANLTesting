@@ -84,7 +84,8 @@ def downloadImages(input, saveImage):
 # Downloads images for a set time
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
-  path = "/home/ryan/Research/imageDownloadTesting"
+  # path = "/home/ryan/Research/imageDownloadTesting"  #loacl
+  path = "/home/rschluet/imageDownloads"               #ANL
   timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
