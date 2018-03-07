@@ -102,7 +102,7 @@ def downloadImages(type, input, saveImage):
 # Downloads images for a set time
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
-  path = "home/rschluet/imageDownloads"
+  path = "~/imageDownloads"
   timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
@@ -128,7 +128,7 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
 # Downloads a set number of images
 def numDownloadImage(stream, streamName, numToDownload, saveImage):
   global downloadCounter
-  path = "home/rschluet/imageDownloads"
+  path = "~/imageDownloads"
   breaker = False
   for x in range(numToDownload):
     if(breaker):
