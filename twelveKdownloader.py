@@ -85,7 +85,7 @@ def downloadImages(input, saveImage):
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
   # path = "/home/ryan/Research/imageDownloadTesting"  #loacl
-  path = "/home/rschluet/imageDownloads"               #ANL
+  path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
   timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
@@ -135,8 +135,6 @@ if __name__ == '__main__':
 
   #Timer to find the total time ellapsed
   programStartTime=time.time()
-
-
 
 
   #Start the actual downloading
