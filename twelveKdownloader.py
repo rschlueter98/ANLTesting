@@ -12,112 +12,166 @@
 
 import threading
 import time
+import sys
 import cv2
+import psutil
 
 
-downloadCores=50  #Change based off what nproc returns (minus one for allocation)
-systemCores=50
+systemCores=0
+
+cores_load_max = psutil.cpu_count()
+cores_download_max = psutil.cpu_count()
+
+#Active core counters for various functions
+cores_load_current = []
+cores_download_current = []
+
+#List and queue for loaded streads and downloaded image data
 loadedStreams = []
-downloadCounter
+streamNames = []
+imageData = []
+
+# Controls the number of feeds to be opened with how many threads. Currently reads in from an input text file of
+# m3u8 feeds links. Can be altered to read in from ip cameras as well
+def loadStreams(streams_file):
+  streamsDatabase = open(streams_file)
+  for line in streamsDatabase:
+    for x in range(0,1):
+      if not line.startswith("#"):
+        opened = False
+        while (not opened):
+          if(len(cores_load_current) < cores_load_max):
+            t = threading.Thread(target=loadStream, args=(line, x,))
+            t.start()
+            cores_load_current.append(t)
+            time.sleep(0.01)
+            opened = True
+          else:
+            time.sleep(0.01)
 
 
-def loadStreams(streamsFile):
-  openedStreamsFile = open(streamsFile)
-  for line in openedStreamsFile:
-    for x in 0 to 4:
-      try:
-        cap = cv2.VideoCapture(line)
-        loadedStreams.append(cap, line.split("/")[4].split(".")[0]
-)
-        print("Stream " + str(len(loadedStreams))  + " out of " + str(4*len(openedStreamsFile))  + " loaded.")
-      except:
-        print("Stream " + str(len(loadedStreams)) + " failed")
+# Function to load one individual stream. Called from the loadStreams
+def loadStream(url, num):
+  try:
+    cap = cv2.VideoCapture(url)
+    if (cap.isOpened()):
+      print ("Stream " + str(len(loadedStreams)) + " loaded")
+      loadedStreams.append(cap)
+      temp = url.split("/")[4]
+      temp = temp.split(".")[0]
+      temp=temp + str(num)
+      streamNames.append(temp)
+  except:
+      print (str(url) + " failed to load")
+  cores_load_current.pop()
 
 
-#Will download based off time downloader found in newDownloader.py
-def downloadImages():
-  activeCores=0
+# Controls number of threads being used for downloading images. Also chooses num or time based off input args
+def downloadImages(input, saveImage):
+  print ("Downloading images")
   for x in range((len(loadedStreams))):
     opened = False
     while (not opened):
-      if (activeCores < systemCores):
-        t = threading.Thread(target=downloadImage, args=(loadedStreams[x], streamNames[x],  input, saveImage,))
+      if (len(cores_download_current) < cores_download_max):
+        t = threading.Thread(target=timeDownloadImage, args=(loadedStreams[x], streamNames[x],  input, saveImage,))
         t.start()
-        activeCores = activeCores + 1
+        cores_download_current.append(t)
         opened = True
       else:
         time.sleep(0.01)
 
 
-
-
-
-
-
 # Downloads images for a set time
-#def timeDownloadImage(stream, saveImage):
-def timeDownloadImage(stream):
-
+def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
   path = "/home/ryan/Research/imageDownloadTesting"
-  timeToDownload = 60
+  timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
   while ((time.time()-startTime)<timeToDownload):
-   try:
-      frame = stream[0].read()[1]
-      filename = ("z_" + str(stream[1]) + "__"  + str(downloadCounter) + ".jpg")
-      fullpath = (str(path) + "/" + filename)
-      cv2.imwrite(str(fullpath), frame)
+    if(breaker):
+      break
+    try:
+      frame = stream.read()[1]
+      if (saveImage):
+        filename = ("z_" + str(streamName) + str(downloadCounter) + ".jpg")
+        fullpath = (str(path) + "/" + filename)
+        cv2.imwrite(str(fullpath), frame)
+      else:
+        imageData.append(frame)
       downloadCounter = downloadCounter + 1
     except:
       print ("Bad Frame")
       pass
   print ("Stream finished downloading")
-  activeCores = activeCores -1
+  cores_download_current.pop()
 
 
 
 
-if __nme__ == '__main__':
+
+if __name__ == '__main__':
+  systemCores = psutil.cpu_count()
   #system validation
-  if($(nproc) < 512):
-    print("Not enough cores, re-run on a node with more cores")
-    exit()
-  
+  # if(systemCores < 512):
+  #   print("Not enough cores, re-run on a node with more cores")
+  #   exit()
+
   #input validation
   if(len(sys.argv) < 2):
     print("Invalid input parameters.")
-    print("Re-run with python twelveKdwonloader.py <input_filename.txt")
+    print("Re-run with python twelveKdwonloader.py <input_filename.txt>")
     exit()
-  
-  
-  
-  
+
+
+
+  # Initialize data structures
+  global downloadCounter
+  downloadCounter = 0
+  fpses = []
+  times = []
+
+
   #Timer to find the total time ellapsed
   programStartTime=time.time()
-  
-  
-  
-  
+
+
+
+
   #Start the actual downloading
   loadStreams(sys.argv[1])
-  downloadImages()
-  
-  
-  
+
+
+  while(len(cores_load_current) > 0):
+    time.sleep(0.05)
+  print ("All streams opened. Downloading now")
+
+
+  # time to download, save or not
+  downloadImages(0.5, 1)
+
+  # Wait while not done downloading yet
+  while (len(cores_download_current) > 0):
+    # print (str(len(imageData)) + " images downloaded")
+    # print ("Downloaded " + str(downloadCounter) + " in " + str(time.time() - ti2) + " seconds.")
+    # print (str(downloadCounter / (time.time() - ti2)) + " FPS")
+    # fpses.append(str(downloadCounter / (time.time() - ti2)))
+    # times.append(time.time() - ti2)
+    # print ("waiting on downloading threads to shut down. " + str(len(cores_download_current)) + " remaining")
+    time.sleep(0.5)
+
   #Stop timer and calclation
   programStopTime=time.time()
-  programEllapsedTime=time.time()
-  
-  
-  
-  
+  programEllapsedTime=programStopTime-programStartTime
+
+
+
+
   print("\n\n\n\n\n\n")
   print("Program finished.")
   print("Total time: " + str(programEllapsedTime))
-  print("Total Frames downloaded: " + str(frames))
-  print("Final file size downloadd: "+str(downloadSize))
-  print("Final Average FPS: " + str(endAVGFPS))
+  print("Total Frames downloaded: " + str(downloadCounter))
+  # print("Final file size downloadd: "+str(downloadSize))
+  # print("Final Average FPS: " + str(endAVGFPS))
   print("Done.")
 
