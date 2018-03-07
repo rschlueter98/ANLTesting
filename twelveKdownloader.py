@@ -93,7 +93,7 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   path=path+"/"+str(now.strftime("%Y-%m-%d-%H-%M"))
   path=path+"/"+streamName
   os.makedirs(path)
-  print(path)
+  # print(path)
   timeToDownload = timeToDownload * 60
   breaker = False
   startTime = time.time()
