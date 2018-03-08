@@ -45,6 +45,7 @@ def loadStreams(streams_file):
         opened = False
         while (not opened):
           if(len(cores_load_current) < cores_load_max):
+            print("OPening")
             t = threading.Thread(target=loadStream, args=(line, x,))
             t.start()
             cores_load_current.append(t)
@@ -88,8 +89,8 @@ def downloadImages(input, saveImage):
 # Downloads images for a set time
 def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
   global downloadCounter
-  # path = "/home/ryan/Research/imageDownloadTesting"                  #loacl
-  path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
+  path = "/home/ryan/Research/imageDownloadTesting"                  #loacl
+  # path = "/projects/SE_HPC/cam2/ryan/downloadedImages"               #ANL
   path=path+"/"+str(now.strftime("%Y-%m-%d-%H-%M"))
   path=path+"/"+streamName
   os.makedirs(path)
