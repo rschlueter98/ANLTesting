@@ -78,6 +78,7 @@ def downloadImages(input, saveImage):
     opened = False
     while (not opened):
       if (len(cores_download_current) < cores_download_max):
+        print("Downloading from: " + str(streamNames[x]))
         t = threading.Thread(target=timeDownloadImage, args=(loadedStreams[x], streamNames[x],  input, saveImage,))
         t.start()
         cores_download_current.append(t)
