@@ -12,8 +12,6 @@ http://video3.earthcam.com/fecnetwork/3847fairmont.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/3983.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4049sonesta.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4054.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/4337.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/4338.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4369.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4387.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4480.flv/playlist.m3u8
@@ -36,7 +34,6 @@ http://video3.earthcam.com/fecnetwork/5324.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5358.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5359.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5423.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/5465.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5536.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5595.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/5663.flv/playlist.m3u8
