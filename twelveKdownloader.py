@@ -60,11 +60,11 @@ def loadStream(url, num):
   try:
     cap = cv2.VideoCapture(url)
     if (cap.isOpened()):
-      print ("Stream " + str(len(loadedStreams)) + " loaded")
       loadedStreams.append(cap)
       temp = url.split("/")[4]
       temp = temp.split(".")[0]
       temp=temp + str(num)
+      print ("Stream " + str(len(loadedStreams)) + ": " + temp + " loaded")
       streamNames.append(temp)
   except:
       print (str(url) + " failed to load")
