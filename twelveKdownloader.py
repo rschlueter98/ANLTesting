@@ -24,7 +24,7 @@ now=datetime.datetime.now()
 systemCores=0
 
 cores_load_max = psutil.cpu_count()/2
-cores_download_max = psutil.cpu_count()
+cores_download_max = psutil.cpu_count()/2
 
 #Active core counters for various functions
 cores_load_current = []
@@ -68,6 +68,7 @@ def loadStream(url, num):
       streamNames.append(temp)
   except:
       print (str(url) + " failed to load")
+      threading.Thread.
   cores_load_current.pop()
 
 
