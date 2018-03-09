@@ -68,7 +68,6 @@ def loadStream(url, num):
       streamNames.append(temp)
   except:
       print (str(url) + " failed to load")
-      threading.Thread.
   cores_load_current.pop()
 
 
