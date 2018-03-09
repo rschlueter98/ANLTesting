@@ -15,7 +15,7 @@ http://video3.earthcam.com/fecnetwork/3983.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4017timessquare.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4049sonesta.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4054.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/4135.flv/playlist.m3u8
+#http://video3.earthcam.com/fecnetwork/4135.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4280.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4281.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/4282.flv/playlist.m3u8
@@ -83,7 +83,7 @@ http://video3.earthcam.com/fecnetwork/7949.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/7962.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/7988.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/8048.flv/playlist.m3u8
-#http://video3.earthcam.com/fecnetwork/8078.flv/playlist.m3u8
+http://video3.earthcam.com/fecnetwork/8078.flv/playlist.m3u8
 #http://video3.earthcam.com/fecnetwork/8174.flv/playlist.m3u8
 #http://video3.earthcam.com/fecnetwork/8211.flv/playlist.m3u8
 #http://video3.earthcam.com/fecnetwork/8470.flv/playlist.m3u8
