@@ -107,7 +107,8 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
       if (saveImage):
         filename = ("z_" + str(downloadCounter) + ".jpg")
         fullpath = (str(path) + "/" + filename)
-        cv2.imwrite(str(fullpath), frame)
+        if(frame):
+          cv2.imwrite(str(fullpath), frame)
       else:
         imageData.append(frame)
       downloadCounter = downloadCounter + 1
