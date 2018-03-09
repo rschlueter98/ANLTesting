@@ -1,7 +1,7 @@
 http://video3.earthcam.com/fecnetwork/10072.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/10147.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/10551.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/10610.flv/playlist.m3u8
+#http://video3.earthcam.com/fecnetwork/10610.flv/playlist.m3u8#98
 http://video3.earthcam.com/fecnetwork/10669.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/10729.flv/playlist.m3u8
 #http://video3.earthcam.com/fecnetwork/10874.flv/playlist.m3u8#78
@@ -54,7 +54,7 @@ http://video3.earthcam.com/fecnetwork/5751.flv/playlist.m3u8
 #http://video3.earthcam.com/fecnetwork/5758.flv/playlist.m3u8#73
 #http://video3.earthcam.com/fecnetwork/5775.flv/playlist.m3u8#70
 http://video3.earthcam.com/fecnetwork/5805.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/6081.flv/playlist.m3u8
+#http://video3.earthcam.com/fecnetwork/6081.flv/playlist.m3u8#88
 http://video3.earthcam.com/fecnetwork/6253.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/6405.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/6406.flv/playlist.m3u8
@@ -114,7 +114,7 @@ http://video3.earthcam.com/fecnetwork/eclasvegas.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/hotelvictoria2.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/interactoneHDCam1.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/lacitytours1.flv/playlist.m3u8
-http://video3.earthcam.com/fecnetwork/libertyHD1.flv/playlist.m3u8
+#http://video3.earthcam.com/fecnetwork/libertyHD1.flv/playlist.m3u8#85
 http://video3.earthcam.com/fecnetwork/miamivishd2.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/miamivishd4.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/miamivishd5.flv/playlist.m3u8
@@ -123,7 +123,7 @@ http://video3.earthcam.com/fecnetwork/moscowHD1.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/philippinesHD1.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/playalinda1.flv/playlist.m3u8
 http://video3.earthcam.com/fecnetwork/playalinda2.flv/playlist.m3u8
-#http://video3.earthcam.com/fecnetwork/text.txt.flv/playlist.m3u8
-#http://video3.earthcam.com/fecnetwork/tokyo1.flv/playlist.m3u8
-#http://video3.earthcam.com/fecnetwork/windjammerHD2.flv/playlist.m3u8
-#http://video3.earthcam.com/fecnetwork/woodmenHD.flv/playlist.m3u8
+http://video3.earthcam.com/fecnetwork/text.txt.flv/playlist.m3u8
+http://video3.earthcam.com/fecnetwork/tokyo1.flv/playlist.m3u8
+http://video3.earthcam.com/fecnetwork/windjammerHD2.flv/playlist.m3u8
+http://video3.earthcam.com/fecnetwork/woodmenHD.flv/playlist.m3u8
