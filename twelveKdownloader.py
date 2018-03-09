@@ -23,8 +23,8 @@ now=datetime.datetime.now()
 
 systemCores=0
 
-cores_load_max = (psutil.cpu_count()/2)
-cores_download_max = (psutil.cpu_count()/2)
+cores_load_max = psutil.cpu_count()
+cores_download_max = psutil.cpu_count()
 
 #Active core counters for various functions
 cores_load_current = []
@@ -45,7 +45,7 @@ def loadStreams(streams_file):
         opened = False
         while (not opened):
           if(len(cores_load_current) < cores_load_max):
-            print("OPening")
+            # print("OPening")
             t = threading.Thread(target=loadStream, args=(line, x,))
             t.start()
             cores_load_current.append(t)
