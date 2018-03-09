@@ -23,8 +23,8 @@ now=datetime.datetime.now()
 
 systemCores=0
 
-cores_load_max = psutil.cpu_count()/2
-cores_download_max = psutil.cpu_count()/2
+cores_load_max = psutil.cpu_count()
+cores_download_max = psutil.cpu_count()
 
 #Active core counters for various functions
 cores_load_current = []
