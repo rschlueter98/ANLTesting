@@ -124,10 +124,8 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
 
 if __name__ == '__main__':
   systemCores = psutil.cpu_count()
-  #system validation
-  # if(systemCores < 512):
-  #   print("Not enough cores, re-run on a node with more cores")
-  #   exit()
+
+
 
   #input validation
   if(len(sys.argv) < 2):
