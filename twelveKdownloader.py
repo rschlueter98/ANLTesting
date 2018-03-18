@@ -109,9 +109,11 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
         fullpath = (str(path) + "/" + filename)
         if(str(frame)!="None"):
           cv2.imwrite(str(fullpath), frame)
+          downloadCounter = downloadCounter + 1
       else:
         imageData.append(frame)
-      downloadCounter = downloadCounter + 1
+        downloadCounter = downloadCounter + 1
+
     except:
       print ("Bad Frame")
       pass
