@@ -112,6 +112,7 @@ def timeDownloadImage(stream, streamName, timeToDownload, saveImage):
           downloadCounter = downloadCounter + 1
         else:
           breaker=True
+          print ("BLANK FRAME STREAM, EXITING")
       else:
         imageData.append(frame)
         downloadCounter = downloadCounter + 1
