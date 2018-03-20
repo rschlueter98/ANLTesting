@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
 
   # time to download (minutes), save or not
-  downloadImages(10, 1)
+  downloadImages(5, 1)
 
   # Wait while not done downloading yet
   while (len(cores_download_current) > 0):
