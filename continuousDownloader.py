@@ -37,6 +37,7 @@ timeToDownload = 5#*60
 def loadStreams(streams_file):
   while(True):
     streamsDatabase = open(streams_file)
+    now = datetime.datetime.now()
     for line in streamsDatabase:
       if not line.startswith("#"):
         opened = False
@@ -62,7 +63,6 @@ def download(line):
       print ("Stream: " + earthcamID + " loaded")
 
       # Initialize save path for new stream
-      now = datetime.datetime.now()
       # path = "/home/ryan/Research/imageDownloadTesting" # Local
       path = "/projects/SE_HPC/cam2/ryan/downloadedImages"  # ANL
       path = path + "/" + str(now.strftime("%Y-%m-%d-%H-%M"))
