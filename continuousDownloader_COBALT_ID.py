@@ -68,7 +68,7 @@ def download(line, COBALT_ID):
       path = "/projects/SE_HPC/cam2/ryan/downloadedImages"  # ANL
       path = path + "/" + str(now.strftime("%Y-%m-%d-%H-%M"))
       path = path + "/" + earthcamID
-      path = path + "/_" + str(COBALT_IDS)
+      path = path + "/_" + str(COBALT_ID)
 
       os.makedirs(path)
       # Initialize new variables for exiting download
