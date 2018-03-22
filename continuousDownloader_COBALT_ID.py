@@ -105,6 +105,11 @@ def download(line, COBALT_ID):
       cores_current.pop()
 
 if __name__ == '__main__':
+  print(sys.argv[2])
+  print(sys.argv[2])
+  print(sys.argv[2])
+  print(sys.argv[2])
+
   #input validation
   if(len(sys.argv) < 3):
     print("Invalid input parameters.")
