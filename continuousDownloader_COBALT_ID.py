@@ -30,7 +30,7 @@ loadedStreams = []
 streamNames = []
 imageData = []
 
-timeToDownload = 5*60
+timeToDownload = 15*60
 
 
 # Controls the number of feeds to be opened with how many threads. Currently reads in from an input text file of
