@@ -24,6 +24,7 @@ now=datetime.datetime.now()
 cores_current = []
 cores_max = psutil.cpu_count()
 
+
 #List and queue for loaded streads and downloaded image data
 loadedStreams = []
 streamNames = []
