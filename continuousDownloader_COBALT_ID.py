@@ -66,9 +66,8 @@ def download(line, COBALT_ID):
       # Initialize save path for new stream
       # path = "/home/ryan/Research/imageDownloadTesting" # Local
       path = "/projects/SE_HPC/cam2/ryan/downloadedImages"  # ANL
-      path = path + "/" + str(now.strftime("%Y-%m-%d-%H-%M"))
+      path = path + "/" + str(now.strftime("%Y-%m-%d-%H-%M")) + "_" + str(COBALT_ID)
       path = path + "/" + earthcamID
-      path = path + "/_" + str(COBALT_ID)
 
       os.makedirs(path)
       # Initialize new variables for exiting download
